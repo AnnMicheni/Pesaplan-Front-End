@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in | PesaPlan</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+</head>
+<body>
+  <div class="auth">
+    <aside class="auth-aside">
+      <a class="brand" href="login.html">
+        <div class="brand-mark">K</div>
+        <div><div class="brand-name">PesaPlan</div><div class="brand-tagline">Money made simple</div></div>
+      </a>
+      <div>
+        <h2>Track every shilling, plan every goal.</h2>
+        <p>Record income and expenses, set monthly budgets and watch your savings grow, all in one place.</p>
+      </div>
+      <p class="small">"Better money habits today, a brighter tomorrow."</p>
+    </aside>
+
+    <main class="auth-main">
+      <div class="auth-card">
+        <!-- Log in view -->
+        <section id="login-view">
+          <h1>Welcome back</h1>
+          <p class="sub">Log in to see your finances.</p>
+          <div class="alert info small" id="demo-hint" hidden>
+            Demo mode: use <strong>ann.micheni@email.com</strong> and <strong>password123</strong>
+          </div>
+          <form id="login-form" novalidate>
+            <div class="field">
+              <label for="email">Email address</label>
+              <input class="input" id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <div style="display:flex;justify-content:space-between">
+                <label for="password">Password</label>
+                <button type="button" class="btn-link small" id="show-reset">Forgot password?</button>
+              </div>
+              <input class="input" id="password" name="password" type="password" autocomplete="current-password" required>
+            </div>
+            <div class="alert" id="login-error" hidden></div>
+            <button class="btn btn-primary btn-block" type="submit">Log in</button>
+          </form>
+          <p class="switch-link">New to PesaPlan? <a href="register.html">Create an account</a></p>
+        </section>
+
+        <!-- Reset password view (extends Log In) -->
+        <section id="reset-view" hidden>
+          <h1>Reset your password</h1>
+          <p class="sub">Enter your email and we'll send you a reset link.</p>
+          <form id="reset-form" novalidate>
+            <div class="field">
+              <label for="reset-email">Email address</label>
+              <input class="input" id="reset-email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="alert success" id="reset-done" hidden></div>
+            <button class="btn btn-primary btn-block" type="submit">Send reset link</button>
+          </form>
+          <p class="switch-link"><button class="btn-link" id="back-to-login">Back to log in</button></p>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="../assets/js/pages/login.js"></script>
+</body>
+</html>

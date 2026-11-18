@@ -1,0 +1,497 @@
+/* ==========================================================================
+   pages.css - layout rules that belong to one screen only
+   ========================================================================== */
+
+/* ---------- Dashboard ---------- */
+
+.dash-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 20px;
+  align-items: start;
+}
+
+.dash-add {
+  height: 44px;
+  padding: 0 22px;
+  font-size: 14px;
+}
+
+.dash-bottom {
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+}
+
+.goal-line + .goal-line {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+.goal-line .top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.goal-line .grow {
+  flex: 1;
+  min-width: 0;
+}
+
+.goal-line .title {
+  font-weight: 600;
+}
+
+.bar-with-pct {
+  display: grid;
+  grid-template-columns: 1fr 40px;
+  gap: 12px;
+  align-items: center;
+}
+
+.bar-with-pct strong {
+  text-align: right;
+}
+
+/* ---------- Transactions ---------- */
+
+.filters {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(4, minmax(0, 1fr)) auto;
+  gap: 12px;
+  align-items: end;
+  margin-bottom: 18px;
+}
+
+.row-actions {
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+.row-actions .icon-btn {
+  width: 32px;
+  height: 32px;
+}
+
+.row-actions .icon-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.table-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ---------- Add transaction ---------- */
+
+.tx-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 20px;
+  align-items: start;
+}
+
+.tx-layout .card {
+  padding: 26px;
+}
+
+.tx-layout form {
+  display: grid;
+  gap: 20px;
+}
+
+.tx-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.summary-card .total {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 4px 0 18px;
+  font-variant-numeric: tabular-nums;
+}
+
+.summary-card dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px 12px;
+  margin: 0;
+  padding: 16px 0;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.summary-card dt {
+  color: var(--text-muted);
+}
+
+.summary-card dd {
+  margin: 0;
+  text-align: right;
+  font-weight: 600;
+}
+
+.balance-box {
+  padding: 14px;
+  border-radius: 10px;
+  background: var(--success-soft);
+}
+
+.balance-box.negative {
+  background: var(--danger-soft);
+}
+
+.balance-box .label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--success);
+}
+
+.balance-box.negative .label,
+.balance-box.negative .value {
+  color: var(--danger);
+}
+
+.balance-box .value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #166534;
+  font-variant-numeric: tabular-nums;
+}
+
+.tip-card {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: var(--radius);
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 13px;
+}
+
+.tip-card strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ---------- Budgets ---------- */
+
+.budget-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 20px;
+}
+
+.monthly-budget {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.monthly-budget .grow {
+  flex: 1;
+}
+
+.monthly-budget .big {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 2px 0 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.insight-icon {
+  color: var(--success);
+  margin-bottom: 14px;
+}
+
+.insight-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* ---------- Savings ---------- */
+
+.goals-area {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(240px, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.goal-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.goal-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px;
+}
+
+.goal-card .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.goal-card .name {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.goal-card .amount {
+  margin: 12px 0 8px;
+  font-weight: 700;
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+}
+
+.goal-card .amount span {
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.goal-card .foot {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0 14px;
+  font-size: 11px;
+}
+
+.goal-card .btn {
+  margin-top: auto;
+  color: var(--primary);
+}
+
+.goal-menu {
+  position: relative;
+}
+
+.goal-menu .dropdown-panel {
+  min-width: 150px;
+}
+
+.streak-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.streak-card .sprout {
+  font-size: 36px;
+}
+
+.streak-card h2 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.streak-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.streak-dots .dot {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.streak-dots .circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #edf1f5;
+  color: #fff;
+}
+
+.streak-dots .circle.on {
+  background: var(--success);
+}
+
+.streak-dots .circle svg {
+  width: 13px;
+  height: 13px;
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 14px;
+}
+
+.section-title p {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ---------- Reports ---------- */
+
+.reports-row {
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+}
+
+.reports-donut {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+}
+
+.reports-donut .breakdown-list {
+  width: 100%;
+}
+
+.health-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.health-card h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 10px 0 6px;
+}
+
+/* ---------- Profile ---------- */
+
+.profile-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.profile-card {
+  text-align: center;
+  padding: 28px 20px 20px;
+}
+
+.profile-card .avatar {
+  width: 88px;
+  height: 88px;
+  font-size: 28px;
+  margin: 0 auto 14px;
+  background: var(--sidebar-bg);
+}
+
+.profile-card .name {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.profile-stats div + div {
+  border-left: 1px solid var(--border);
+}
+
+.profile-stats strong {
+  display: block;
+  font-size: 20px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+/* ---------- Settings ---------- */
+
+.settings-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.settings-panel .field {
+  max-width: 640px;
+  margin-bottom: 18px;
+}
+
+.danger-zone {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.danger-zone h2 {
+  color: var(--danger);
+  font-weight: 500;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1200px) {
+  .filters {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .goals-area,
+  .reports-row,
+  .dash-bottom {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .dash-top,
+  .tx-layout,
+  .budget-hero,
+  .profile-layout,
+  .settings-layout {
+    grid-template-columns: 1fr;
+  }
+  .dash-add {
+    order: -1;
+  }
+  .filters {
+    grid-template-columns: 1fr 1fr;
+  }
+  .monthly-budget,
+  .health-card,
+  .danger-zone {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.settings-layout .danger-zone {
+  margin-top: 20px;
+}

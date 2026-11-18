@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reports and analytics | PesaPlan</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+</head>
+<body>
+  <div class="app">
+    <aside id="sidebar" class="sidebar"></aside>
+    <div class="main">
+      <header id="topbar" class="topbar"></header>
+
+      <main class="content">
+        <div class="page-header">
+          <div>
+            <h1>Reports &amp; analytics</h1>
+            <p>Understand your money and make more confident decisions.</p>
+          </div>
+          <div class="page-header-actions">
+            <label class="sr-only" for="months">Report period</label>
+            <select class="select" id="months" style="width:160px">
+              <option value="3">Last 3 months</option>
+              <option value="6" selected>Last 6 months</option>
+              <option value="12">Last 12 months</option>
+            </select>
+            <!-- Export Report extends Generate Report -->
+            <button class="btn" id="export">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+              Export
+            </button>
+          </div>
+        </div>
+
+        <section class="grid cols-4" id="stats">
+          <div class="card skeleton" style="height:112px"></div>
+          <div class="card skeleton" style="height:112px"></div>
+          <div class="card skeleton" style="height:112px"></div>
+          <div class="card skeleton" style="height:112px"></div>
+        </section>
+
+        <section class="grid reports-row" style="margin-top:20px">
+          <article class="card">
+            <div class="card-header">
+              <div><h2>Cash flow</h2><p>Income and expenses over time</p></div>
+            </div>
+            <div id="cashflow-chart"></div>
+          </article>
+
+          <article class="card">
+            <div class="card-header">
+              <div><h2>Spending breakdown</h2><p id="breakdown-period"></p></div>
+            </div>
+            <div class="reports-donut">
+              <div id="breakdown-donut"></div>
+              <div class="breakdown-list" id="breakdown-list"></div>
+            </div>
+          </article>
+        </section>
+
+        <section class="grid reports-row">
+          <article class="card">
+            <div class="card-header">
+              <div><h2>Top spending categories</h2><p id="top-period">Where your money went</p></div>
+            </div>
+            <div id="top-list"></div>
+          </article>
+
+          <article class="card card-soft health-card" id="health"></article>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script type="module" src="../assets/js/pages/reports.js"></script>
+</body>
+</html>

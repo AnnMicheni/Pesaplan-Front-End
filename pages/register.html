@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create account | PesaPlan</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+</head>
+<body>
+  <div class="auth">
+    <aside class="auth-aside">
+      <a class="brand" href="login.html">
+        <div class="brand-mark">K</div>
+        <div><div class="brand-name">PesaPlan</div><div class="brand-tagline">Money made simple</div></div>
+      </a>
+      <div>
+        <h2>Start building better money habits.</h2>
+        <p>It takes less than a minute to set up your account.</p>
+      </div>
+      <p class="small">"Better money habits today, a brighter tomorrow."</p>
+    </aside>
+
+    <main class="auth-main">
+      <div class="auth-card">
+        <h1>Create your account</h1>
+        <p class="sub">Free, private and built for Kenyan shillings.</p>
+        <form id="register-form" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="firstName">First name</label>
+              <input class="input" id="firstName" name="firstName" autocomplete="given-name" required>
+            </div>
+            <div class="field">
+              <label for="lastName">Last name</label>
+              <input class="input" id="lastName" name="lastName" autocomplete="family-name" required>
+            </div>
+            <div class="field full">
+              <label for="email">Email address</label>
+              <input class="input" id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field full">
+              <label for="password">Password</label>
+              <input class="input" id="password" name="password" type="password" autocomplete="new-password" minlength="8" required>
+              <span class="hint">At least 8 characters.</span>
+            </div>
+            <div class="field full">
+              <label for="confirm">Confirm password</label>
+              <input class="input" id="confirm" name="confirm" type="password" autocomplete="new-password" required>
+            </div>
+          </div>
+          <div class="alert" id="register-error" hidden></div>
+          <button class="btn btn-primary btn-block" type="submit">Create account</button>
+        </form>
+        <p class="switch-link">Already have an account? <a href="login.html">Log in</a></p>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="../assets/js/pages/register.js"></script>
+</body>
+</html>

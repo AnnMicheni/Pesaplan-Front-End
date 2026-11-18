@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add transaction | PesaPlan</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+</head>
+<body>
+  <div class="app">
+    <aside id="sidebar" class="sidebar"></aside>
+    <div class="main">
+      <header id="topbar" class="topbar"></header>
+
+      <main class="content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="dashboard.html">Dashboard</a><span>›</span>
+          <a href="transactions.html">Transactions</a><span>›</span>
+          <span class="current" id="crumb">Add transaction</span>
+        </nav>
+        <div class="page-header">
+          <div>
+            <h1 id="page-title">Add Transaction</h1>
+            <p>Record income or expenses to keep your finances up to date.</p>
+          </div>
+        </div>
+
+        <div class="tx-layout">
+          <section class="card">
+            <div class="card-header">
+              <div>
+                <h2>Transaction details</h2>
+                <p>Fields marked with an asterisk are required.</p>
+              </div>
+            </div>
+
+            <form id="tx-form" novalidate>
+              <fieldset class="field" style="border:none;padding:0;margin:0">
+                <legend class="label" style="margin-bottom:6px">Transaction type *</legend>
+                <div class="choice-group">
+                  <label class="choice expense">
+                    <input type="radio" name="type" value="EXPENSE" checked>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                    Expense<span class="radio"></span>
+                  </label>
+                  <label class="choice income">
+                    <input type="radio" name="type" value="INCOME">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 7 7 17M16 17H7V8"/></svg>
+                    Income<span class="radio"></span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label for="amount">Amount *</label>
+                  <div class="input-group">
+                    <span class="addon" id="currency-addon">KES</span>
+                    <input class="input" id="amount" name="amount" type="number" inputmode="decimal" min="0.01" step="0.01" placeholder="0.00" required>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="categoryId">Category *</label>
+                  <select class="select" id="categoryId" name="categoryId" required></select>
+                  <span class="hint">Used for monthly spending reports</span>
+                </div>
+                <div class="field">
+                  <label for="date">Date *</label>
+                  <input class="input" id="date" name="date" type="date" required>
+                </div>
+                <div class="field">
+                  <label for="paymentMethod">Account / payment method *</label>
+                  <select class="select" id="paymentMethod" name="paymentMethod" required></select>
+                </div>
+                <div class="field full">
+                  <div style="display:flex;justify-content:space-between">
+                    <label for="description">Description or note</label>
+                    <span class="hint" id="char-count">0 / 120</span>
+                  </div>
+                  <textarea class="textarea" id="description" name="description" maxlength="120" placeholder="Add a note..."></textarea>
+                </div>
+              </div>
+
+              <div class="alert" id="form-error" hidden></div>
+
+              <div class="tx-actions">
+                <a class="btn" href="transactions.html">Cancel</a>
+                <button class="btn btn-primary" type="submit" id="save-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>
+                  Save Transaction
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <aside>
+            <section class="card summary-card">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <h2>Transaction summary</h2>
+                <span class="badge danger" id="sum-type">Expense</span>
+              </div>
+              <div class="small muted" style="margin-top:16px;text-transform:uppercase;letter-spacing:.04em">Total amount</div>
+              <div class="total" id="sum-amount">KES 0.00</div>
+              <dl>
+                <dt>Category</dt><dd id="sum-category">Not chosen</dd>
+                <dt>Account</dt><dd id="sum-method">Not chosen</dd>
+                <dt>Date</dt><dd id="sum-date">Today</dd>
+              </dl>
+              <div class="balance-box" id="balance-box">
+                <div class="label">Balance after saving</div>
+                <div class="value" id="sum-balance">...</div>
+              </div>
+            </section>
+            <div class="tip-card">
+              <strong>Keep your reports accurate</strong>
+              Choose the closest category so your budget and monthly insights stay useful.
+            </div>
+          </aside>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script type="module" src="../assets/js/pages/add-transaction.js"></script>
+</body>
+</html>

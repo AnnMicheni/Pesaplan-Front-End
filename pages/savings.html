@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Savings | PesaPlan</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+</head>
+<body>
+  <div class="app">
+    <aside id="sidebar" class="sidebar"></aside>
+    <div class="main">
+      <header id="topbar" class="topbar"></header>
+
+      <main class="content">
+        <div class="page-header">
+          <div>
+            <h1>Savings</h1>
+            <p>Build healthy habits and make every goal achievable.</p>
+          </div>
+          <button class="btn btn-primary" id="new-goal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            New savings goal
+          </button>
+        </div>
+
+        <section class="grid cols-3" id="stats">
+          <div class="card skeleton" style="height:112px"></div>
+          <div class="card skeleton" style="height:112px"></div>
+          <div class="card skeleton" style="height:112px"></div>
+        </section>
+
+        <section class="goals-area" style="margin-top:20px">
+          <div>
+            <div class="section-title">
+              <div>
+                <h2>Your savings goals</h2>
+                <p>Small steps add up to big results</p>
+              </div>
+            </div>
+            <div class="goal-cards" id="goal-cards"></div>
+          </div>
+          <article class="card card-soft streak-card" id="streak"></article>
+        </section>
+
+        <section class="card">
+          <div class="card-header">
+            <div>
+              <h2>Recent savings activity</h2>
+              <p>Your latest goal contributions</p>
+            </div>
+          </div>
+          <div id="activity"></div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script type="module" src="../assets/js/pages/savings.js"></script>
+</body>
+</html>

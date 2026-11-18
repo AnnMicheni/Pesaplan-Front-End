@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Budgets | PesaPlan</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+</head>
+<body>
+  <div class="app">
+    <aside id="sidebar" class="sidebar"></aside>
+    <div class="main">
+      <header id="topbar" class="topbar"></header>
+
+      <main class="content">
+        <div class="page-header">
+          <div>
+            <h1>Budgets</h1>
+            <p>Plan your spending and stay on track this month.</p>
+          </div>
+          <button class="btn btn-primary" id="create-budget">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            Create budget
+          </button>
+        </div>
+
+        <section class="grid cols-3" id="stats">
+          <div class="card skeleton" style="height:112px"></div>
+          <div class="card skeleton" style="height:112px"></div>
+          <div class="card skeleton" style="height:112px"></div>
+        </section>
+
+        <section class="budget-hero" style="margin-top:20px">
+          <article class="card">
+            <div class="card-header">
+              <div>
+                <h2>Monthly budget</h2>
+                <p id="hero-period"></p>
+              </div>
+              <button class="btn" id="edit-limits">Edit limits</button>
+            </div>
+            <div class="monthly-budget" id="hero"></div>
+          </article>
+
+          <article class="card card-soft">
+            <div class="insight-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg>
+            </div>
+            <h2>Smart insight</h2>
+            <p class="small muted" style="margin:6px 0 14px" id="insight">Loading...</p>
+            <a class="small" href="reports.html"><strong>View spending report ›</strong></a>
+          </article>
+        </section>
+
+        <section class="card">
+          <div class="card-header">
+            <div>
+              <h2>Category budgets</h2>
+              <p>Track spending against your limits</p>
+            </div>
+            <label class="sr-only" for="period">Month</label>
+            <select class="select" id="period" style="width:180px"></select>
+          </div>
+          <div id="budget-rows"></div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script type="module" src="../assets/js/pages/budgets.js"></script>
+</body>
+</html>

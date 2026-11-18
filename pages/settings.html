@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Settings | PesaPlan</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+</head>
+<body>
+  <div class="app">
+    <aside id="sidebar" class="sidebar"></aside>
+    <div class="main">
+      <header id="topbar" class="topbar"></header>
+
+      <main class="content">
+        <div class="page-header">
+          <div>
+            <h1>Settings</h1>
+            <p>Customize your account and how PesaPlan works for you.</p>
+          </div>
+        </div>
+
+        <div class="settings-layout">
+          <nav class="card side-tabs" aria-label="Settings sections" id="tabs">
+            <button class="side-tab active" data-tab="general">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+              General<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg>
+            </button>
+            <button class="side-tab" data-tab="notifications">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              Notifications<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg>
+            </button>
+            <button class="side-tab" data-tab="security">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+              Security<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg>
+            </button>
+          </nav>
+
+          <div>
+            <!-- General -->
+            <section class="card settings-panel" data-panel="general">
+              <div class="card-header">
+                <div><h2>General</h2><p>Set your language, currency and display preferences.</p></div>
+              </div>
+              <form id="general-form" novalidate>
+                <div class="field">
+                  <label for="language">Language</label>
+                  <select class="select" id="language" name="language">
+                    <option value="en">English</option>
+                    <option value="sw">Kiswahili</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="currency">Default currency</label>
+                  <select class="select" id="currency" name="currency"></select>
+                </div>
+                <div class="setting-row" style="max-width:640px">
+                  <div>
+                    <div class="label">Start of the week</div>
+                    <div class="hint">Choose which day your weekly reports begin.</div>
+                  </div>
+                  <select class="select control" name="weekStart" aria-label="Start of the week">
+                    <option value="MONDAY">Monday</option>
+                    <option value="SUNDAY">Sunday</option>
+                  </select>
+                </div>
+                <div class="setting-row" style="max-width:640px">
+                  <div>
+                    <div class="label">Compact number format</div>
+                    <div class="hint" id="compact-example">Display KSh 125,000 as KSh 125k.</div>
+                  </div>
+                  <label class="switch"><input type="checkbox" name="compactNumbers" aria-label="Compact number format"><span class="track"></span></label>
+                </div>
+                <div class="form-actions" style="border-top:1px solid var(--border);padding-top:18px">
+                  <button class="btn btn-primary" type="submit" id="save-general">Save changes</button>
+                </div>
+              </form>
+            </section>
+
+            <!-- Notifications -->
+            <section class="card settings-panel" data-panel="notifications" hidden>
+              <div class="card-header">
+                <div><h2>Notifications</h2><p>Choose which alerts PesaPlan shows you.</p></div>
+              </div>
+              <form id="notify-form" novalidate>
+                <div class="setting-row">
+                  <div>
+                    <div class="label">Budget alerts</div>
+                    <div class="hint">Alert me when a category budget reaches 80% or is exceeded.</div>
+                  </div>
+                  <label class="switch"><input type="checkbox" name="budgetAlerts" aria-label="Budget alerts"><span class="track"></span></label>
+                </div>
+                <div class="setting-row">
+                  <div>
+                    <div class="label">Savings goal reminders</div>
+                    <div class="hint">Remind me if I haven't added money to a goal this month.</div>
+                  </div>
+                  <label class="switch"><input type="checkbox" name="goalReminders" aria-label="Savings goal reminders"><span class="track"></span></label>
+                </div>
+                <div class="form-actions" style="border-top:1px solid var(--border);padding-top:18px">
+                  <button class="btn btn-primary" type="submit" id="save-notify">Save changes</button>
+                </div>
+              </form>
+            </section>
+
+            <!-- Security -->
+            <section class="card settings-panel" data-panel="security" hidden>
+              <div class="card-header">
+                <div><h2>Security</h2><p>Change your password. You'll stay logged in on this device.</p></div>
+              </div>
+              <form id="password-form" novalidate>
+                <div class="field">
+                  <label for="currentPassword">Current password</label>
+                  <input class="input" id="currentPassword" name="currentPassword" type="password" autocomplete="current-password">
+                </div>
+                <div class="field">
+                  <label for="newPassword">New password</label>
+                  <input class="input" id="newPassword" name="newPassword" type="password" autocomplete="new-password">
+                  <span class="hint">At least 8 characters.</span>
+                </div>
+                <div class="field">
+                  <label for="confirmPassword">Confirm new password</label>
+                  <input class="input" id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password">
+                </div>
+                <div class="form-actions" style="border-top:1px solid var(--border);padding-top:18px">
+                  <button class="btn btn-primary" type="submit" id="save-password">Update password</button>
+                </div>
+              </form>
+            </section>
+
+            <section class="card danger-zone">
+              <div>
+                <h2>Delete account</h2>
+                <p class="small muted">Permanently remove your account and all financial data.</p>
+              </div>
+              <button class="btn btn-danger-outline" id="delete-account">Delete account</button>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script type="module" src="../assets/js/pages/settings.js"></script>
+</body>
+</html>
